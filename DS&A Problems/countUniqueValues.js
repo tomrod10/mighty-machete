@@ -1,3 +1,10 @@
+// In this part of the DS&A course I went over
+// another common pattern referred to as
+// 'Multiple Pointers'. It can be used to count elements
+// or find values in data that fulfill a condition.
+// These pointers can move towards the end, beginning,
+// or towards the middle of the given data.
+
 // Implement a function which accepts a sorted
 // array, and counts the unique values in it.
 // There can be negative numbers in the array,
