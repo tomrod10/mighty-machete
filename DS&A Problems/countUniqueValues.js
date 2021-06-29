@@ -13,4 +13,21 @@ let countUniqueValues = arr => {
     return 0;
   }
 
+  let i = 0;
+  let j = 1;
+  while(j < arr.length) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+      j++;
+    } else {
+      j++;
+    }
+  }
+  return i + 1;
 }
+
+let test1 = countUniqueValues([1,1,1,1,1,2]) // 2
+let test2 = countUniqueValues([-2,-1,-1,0,1,]) // 4
+console.log(test1);
+console.log(test2);
