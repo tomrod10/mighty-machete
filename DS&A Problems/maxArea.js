@@ -53,3 +53,12 @@ var maxArea = function(height) {
   return maxArea;
 };
 
+let test1 = maxArea([1,8,6,2,5,4,8,3,7]); // 49
+let test2 = maxArea([1,1]); // 1
+let test3 = maxArea([4,3,2,1,4]); // 16
+let test4 = maxArea([1,2,1]) // 2
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
+
