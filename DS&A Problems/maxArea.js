@@ -21,5 +21,8 @@ Output: 16
 Input: height = [1,2,1]
 Output: 2
 
-
+Go into detail on how the prompt was very very vague.
+Also, explain how we get the shortes of two coordinates
+and try to multiply its height with the distance between
+the two coordinates.
 */
