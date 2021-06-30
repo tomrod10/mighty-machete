@@ -21,8 +21,35 @@ Output: 16
 Input: height = [1,2,1]
 Output: 2
 
-Go into detail on how the prompt was very very vague.
-Also, explain how we get the shortes of two coordinates
-and try to multiply its height with the distance between
-the two coordinates.
+Myself and friend of my mine found the prompt to be too vague. We both looked
+at the hints and found out how we were meant to find the max area of the
+water container.
+
+In short, you start on both ends of the container and on each iteration
+check for the shortest of the two coordinates/bars and multiply its value
+with the distance between the coordinates/bars. Then, move towards the
+center of the container the shortest of the two coordinates/bars by one.
 */
+
+// My initial approach was the naive/brute force way
+// where I implemented a nested loop achieving
+// the results in O(n^2) time complexity. Unfortunaly,
+// it exceeded the time limit.
+
+// The better and acceptable solution runs in O(n)
+var maxArea = function(height) {
+  let maxArea = 0;
+  let left = 0;
+  let right = height.length - 1;
+
+  while (left < right) {
+    maxArea = Math.max(maxArea, Math.min(height[left], height[right]) * (right - left));
+    if (height[left] < height[right]) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+  return maxArea;
+};
+
