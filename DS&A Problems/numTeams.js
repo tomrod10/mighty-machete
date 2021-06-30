@@ -1,5 +1,6 @@
 /*
 [LeetCode #1395 Count Number of Teams]
+https://leetcode.com/problems/count-number-of-teams/
 
 Prompt:
 There are n soldiers standing in a line. Each soldier is assigned a unique rating value.
