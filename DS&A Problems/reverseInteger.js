@@ -45,3 +45,13 @@ var reverse = function(n) {
   }
 };
 
+let test1 = reverse(123); // 321
+let test2 = reverse(-123); // -321
+let test3 = reverse(0); // 0
+let test4 = reverse(120); // 21
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
+
