@@ -15,24 +15,14 @@ Output: [4,9,9,49,121]
 */
 
 var sortedSquares = function(nums) {
-  // input - sorted array of nums (ascending order)
-  // output - sorted array of squared nums (ascending order)
-  // constraint/s - sorted in ascending order
-  // edge case/s - null, empty array input, invalid input
-
-  // two parts:
-
-  // 1 - square each value
-
-  // 2 - sorting in ascending order
-
-  // square all elements
   for (let i = 0; i < nums.length; i++) {
     nums[i] = nums[i]**2;
   }
-
-  // sort all elements
-  return nums.sort((a,b) => (
-    a - b
-  ));
+  return nums.sort((a,b) => (a - b));
 };
+
+let test1 = sortedSquares([-4,-1,0,3,10]);
+let test2 = sortedSquares([-7,-3,2,3,11]);
+
+console.log(test1);
+console.log(test2);
