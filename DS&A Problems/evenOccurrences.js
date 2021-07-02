@@ -32,3 +32,9 @@ var findNumbers = function(nums) {
   }
   return evenNumDigits;
 };
+
+let test1 = findNumbers([12,345,2,6,7896]); // 2
+let test2 = findNumbers([555,901,482,1771]); // 1
+
+console.log(test1);
+console.log(test2);
