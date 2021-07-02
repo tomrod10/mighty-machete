@@ -19,24 +19,6 @@ Explanation: After calling your function, the input array is modified to: [1,2,3
 */
 
 var duplicateZeros = function(arr) {
-  // [1,0,2,3,0,4,5,0]
-
-  // in process:
-  // [1,0,0,2,3,0,4,5]
-
-  // end result:
-  // [1,0,0,2,3,0,0,4]
-
-  // input - array of nums
-  // output - none
-  // constraint/s - 0 <= arr[i] <= 9 | no returns | O(1) space complexity
-  // edge case/s - empty array, null, invalid input
-
-  // loop from the end of the array
-  // shift values one place to the right
-  // once idx(0) + 1 is reached
-    // set it to zero (0)
-
     for (let i = 0; i < arr.length; i++) {
       if (i === arr.length - 1) { break; }
       if (arr[i] === 0) {
