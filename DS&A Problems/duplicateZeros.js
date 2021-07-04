@@ -36,8 +36,7 @@ var duplicateZeros = function(arr) {
 let test1 = duplicateZeros([1,0,2,3,0,4,5,0]); // [1,0,0,2,3,0,0,4]
 console.log(test1);
 
-// Alternate solution
-// Time Complexity: O(n)
+// Alternate solution - Time Complexity: O(n)
 let possibleDups = 0;
 let length = arr.length - 1;
 
