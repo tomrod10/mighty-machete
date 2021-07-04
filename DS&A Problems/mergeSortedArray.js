@@ -30,15 +30,6 @@ Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 */
 
 var merge = function(nums1, m, nums2, n) {
-  // input - two nums array & two nums m and n
-  // output - null | just merge arrays into nums 1 in ascending order
-  // constraint/s -
-  // edge case/s -
-
-  // merge 1st
-
-  // sort 2nd
-
   for (let i = 0; i < nums1.length; i++) { // merged arrays
     for (let i = m; i < nums1.length; i++) {
       nums1[i] = nums2.pop();
