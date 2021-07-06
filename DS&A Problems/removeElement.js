@@ -1,4 +1,5 @@
 /* [Remove Element] from LeetCode's explore - Array module
+https://leetcode.com/explore/learn/card/fun-with-arrays/526/deleting-items-from-an-array/3247/
 
 Prompt:
 Given an integer array nums and an integer val, remove all occurrences of val in nums in-place. The relative order of the elements may be changed.
