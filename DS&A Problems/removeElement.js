@@ -42,6 +42,28 @@ Note that the five elements can be returned in any order.
 It does not matter what you leave beyond the returned k (hence they are underscores).
 */
 
+// My solution - Space: O(1) | Time: O(n) | Runtime: 64 ms |
 var removeElement = function(nums, val) {
+  let length = nums.length;
 
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] === val) {
+      nums[i] = 0;
+      length--;
+    }
+  }
+  nums.sort((a,b) => (b - a));
+  return length;
+};
+
+// Alternate Solution - Space: O(1) | Time: O(n) | Runtime: 76 ms |
+var removeElement = function(nums, val) {
+  let i = 0;
+  for (let j = 0; j < nums.length; j++) {
+    if (nums[j] !== val) {
+      nums[i] = nums[j];
+      i++;
+    }
+  }
+  return i;
 };
