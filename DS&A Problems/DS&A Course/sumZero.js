@@ -21,16 +21,7 @@ Example 3:
 sumZero([1,2,3]) // undefined
 */
 
-// input - sorted array of ints
-// output - array containing the first pair to sum to zero
-// constaint/s - sorted |
-// edge case/s - empty or array of length 1 | null input
-
-// Question:
-// Can I assume values in arr are unique?
-// Answer:
-// Taking a look at the examples given, I'll say yes
-
+// Solution | Time Complexity: O(n) | Space Complexity: O(1)
 let sumZero = (arr) => {
   if (arr.length < 2) {
     return undefined;
