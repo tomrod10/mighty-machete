@@ -8,6 +8,9 @@ pair where the sum is zero. Return an array that includes
 both values that sum to zero or undefined if a pair
 does not exist.
 
+Note:
+This problem makes use of the multiple pointer approach.
+
 Example 1:
 sumZero([-3,-2,-1,0,1,2,3]) // [-3,3]
 
@@ -17,3 +20,43 @@ sumZero([-2,0,1,3]) // undefined
 Example 3:
 sumZero([1,2,3]) // undefined
 */
+
+// input - sorted array of ints
+// output - array containing the first pair to sum to zero
+// constaint/s - sorted |
+// edge case/s - empty or array of length 1 | null input
+
+// Question:
+// Can I assume values in arr are unique?
+// Answer:
+// Taking a look at the examples given, I'll say yes
+
+let sumZero = (arr) => {
+  if (arr.length < 2) {
+    return undefined;
+  }
+
+  let start = 0;
+  let end = arr.length - 1;
+
+  while(start < end) {
+    if (arr[start] + arr[end] === 0) {
+      return [arr[start], arr[end]];
+    } else if (arr[start] + arr[end] > 0) {
+      end--;
+    } else {
+      start++;
+    }
+  }
+  return undefined;
+}
+
+let test1 = sumZero([-3,-2,-1,0,1,2,3]); // [-3,3]
+let test2 = sumZero([-2,0,1,3]); // undefined
+let test3 = sumZero([1,2,3]); // undefined
+let test4 = sumZero([-2,-1,0,1,3]); // [-1,1]
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
