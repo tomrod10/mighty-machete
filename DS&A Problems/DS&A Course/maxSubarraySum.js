@@ -53,3 +53,15 @@ let maxSubarraySum = (arr, num) => {
   }
   return maxSum;
 }
+
+let test1 = maxSubarraySum([1,2,5,2,8,1,5], 2) // 10
+let test2 = maxSubarraySum([1,2,5,2,8,1,5], 4) // 17
+let test3 = maxSubarraySum([4,2,1,6], 1) // 6
+let test4 = maxSubarraySum([4,2,1,6,2], 4) // 13
+let test5 = maxSubarraySum([], 4) // null
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
+console.log(test5);
