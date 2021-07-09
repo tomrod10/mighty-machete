@@ -45,3 +45,11 @@ var checkIfExist = function(arr) {
   }
   return false;
 };
+
+let test1 = checkIfExist([10,2,5,3]); // true
+let test2 = checkIfExist([7,1,14,11]); // true
+let test3 = checkIfExist([3,1,7,11]); // false
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
