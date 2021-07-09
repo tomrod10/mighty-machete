@@ -27,3 +27,21 @@ Explanation: In this case does not exist N and M, such that N = 2 * M.
 
 */
 
+//Solution | Time O(n) | Space O(1)
+var checkIfExist = function(arr) {
+  let i = 0;
+  let j = 1;
+
+  while (i < arr.length) {
+    if (i !== j) {
+      if (arr[i] === 2*arr[j]) { return true; }
+    }
+    if (j === arr.length - 1) {
+      i++;
+      j = 0;
+      continue;
+    }
+    j++;
+  }
+  return false;
+};
