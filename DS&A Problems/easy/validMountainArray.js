@@ -40,8 +40,27 @@ Output: true
 */
 
 var validMountainArray = function(arr) {
-  // input -
-  // output -
-  // constraint/s -
-  // edge case/s -
+  // input - arr of ints
+  // output - boolean | Whether it's a valid mountain
+  // constraint/s - can only increase or decrease in movement. No flat spots.
+  // edge case/s - invalid input | null | empty array | arr,length < 3
+
+  // Is the arr sorted?
+
+  if (arr.length < 3 || !Array.isArray(arr) || arr[0] > arr[1]) { return false; }
+
+  let isMntn = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i+1]) {
+      isMntn = true;
+      continue;
+    }
+
+    if (isMntn && arr[i] < arr[i+1]) {
+      return false;
+    } else if (arr[i] === arr[i+1]) {
+      return false;
+    }
+  }
+  return isMntn;
 };
