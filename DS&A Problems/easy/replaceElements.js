@@ -23,12 +23,8 @@ Explanation: There are no elements to the right of index 0.
 
 */
 
+// Solution | Time O(n) | Space O(1) | Runtime 352 ms
 var replaceElements = function(arr) {
-  // input - array of ints
-  // output - array of ints
-  // constraint/s - positive ints | space O(1)
-  // edges case/s - null input | empty array | array length of 1
-
   if (!Array.isArray(arr) || arr.length < 1) { return []; }
 
   if (arr.length === 1) {
@@ -38,17 +34,37 @@ var replaceElements = function(arr) {
 
   let i = 0;
   let j = i+1;
-  arr[arr.length-1] = -1;
+  let max = 0;
+
   while(j < arr.length) {
-    if (arr[i] < arr[j]) {
-      arr[i] = arr[j];
+    if (arr[j] > max) {
+      max = arr[j];
     }
     if (j === arr.length-1) {
+      if (i === arr.length-2) { arr[i] = arr[j]; }
+      arr[i] = max;
+      max = 0;
       i++;
       j = i+1;
       continue;
     }
     j++;
+  }
+  arr[arr.length-1] = -1;
+  return arr;
+};
+
+// Alternate Solution by menothe | Time O(n) | Space O(1) | Runtime 100 ms
+var replaceElements = function(arr) {
+  let last = arr[arr.length - 1];
+  arr[arr.length-1] = -1;
+  let temp;
+  for (let i = arr.length - 2; i >= 0; i--) {
+      temp = arr[i];
+      arr[i] = last;
+      if (temp > last) {
+          last = temp;
+      }
   }
   return arr;
 };
