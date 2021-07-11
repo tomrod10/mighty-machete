@@ -55,6 +55,7 @@ var replaceElements = function(arr) {
 };
 
 // Alternate Solution by menothe | Time O(n) | Space O(1) | Runtime 100 ms
+// https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/discuss/1279583/Fast-Simple-JavaScript-Solution-O(n)-Time-O(1)-Space-w-Explanation
 var replaceElements = function(arr) {
   let last = arr[arr.length - 1];
   arr[arr.length-1] = -1;
