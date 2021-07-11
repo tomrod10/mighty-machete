@@ -16,3 +16,30 @@ Input: nums = [0]
 Output: [0]
 */
 
+// Solution
+var moveZeroes = function(nums) {
+  if (nums === null || nums.length < 1) { return null; }
+
+  if (nums.length === 1) { return nums; }
+
+  let i = 0;
+  let j = i+1;
+
+  while (j < nums.length) {
+    if (nums[i] === 0) {
+      if (nums[j] !== 0) {
+        let temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+        i++;
+        j = i+1;
+      } else {
+        j++;
+      }
+    } else {
+      i++;
+      j = i+1;
+    }
+  }
+  return nums;
+};
