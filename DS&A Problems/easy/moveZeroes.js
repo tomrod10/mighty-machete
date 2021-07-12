@@ -43,3 +43,16 @@ var moveZeroes = function(nums) {
   }
   return nums;
 };
+
+//Alternate Solution
+var moveZeroes = function(nums) {
+  let lastZeroIdx = 0;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] = != 0) {
+      nums[lastZeroIdx++] = nums[i];
+    }
+  }
+  for (let i = lastZeroIdx; i < nums.length; i++) {
+    nums[i] = 0;
+  }
+}
