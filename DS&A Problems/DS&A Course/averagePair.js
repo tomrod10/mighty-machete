@@ -15,11 +15,28 @@ averagePair([-1,0,3,4,5,6], 4.1); // false
 averagePair([], 4); // false
 */
 
+console.time('abc');
 let averagePair = (arr, target) => {
-  // input - int arr and target avg (*float fixed to 1 decimal place)
-  // output - boolean | whether a pair avg from the array matches target
-  // constraint/s - Time O(n) | Space O(1)
-  // edge case/s - empty array |
+  let i = 0;
+  let j = 1;
 
-
+  while(i < arr.length) {
+    if (i !== j) {
+      if ((arr[i] + arr[j]) / 2 === target) {
+        return true;
+      }
+    }
+    if (j === arr.length - 1) {
+      i++;
+      j =  0;
+    }
+    j++;
+  }
+  return false;
+  let end = performance.now();
 }
+
+let test1 = averagePair([1,2,3],  2.5); // true
+console.timeEnd('abc');
+
+console.log(test1);
