@@ -13,6 +13,21 @@ Output: [2,4,3,1]
 The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
  */
 
+// Solution
 var sortArrayByParity = function(nums) {
+  let i = 0;
+  let last = nums.length;
 
+  while (i < last) {
+    if (nums[i] % 2 === 1) {
+      if (nums[last] % 2 === 0) {
+        let temp = nums[i];
+        nums[i] = nums[last];
+        nums[last] = temp;
+        last--;
+        i++;
+      } else { last--; }
+    } else { i++; }
+  }
+  return nums;
 };
