@@ -16,7 +16,7 @@ The outputs [4,2,3,1], [2,4,1,3], and [4,2,1,3] would also be accepted.
 // Solution
 var sortArrayByParity = function(nums) {
   let i = 0;
-  let last = nums.length;
+  let last = nums.length - 1;
 
   while (i < last) {
     if (nums[i] % 2 === 1) {
