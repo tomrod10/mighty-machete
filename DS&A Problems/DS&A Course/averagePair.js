@@ -19,7 +19,6 @@ console.time('abc');
 let averagePair = (arr, target) => {
   let i = 0;
   let j = 1;
-
   while(i < arr.length) {
     if (i !== j) {
       if ((arr[i] + arr[j]) / 2 === target) { return true; }
