@@ -25,7 +25,7 @@ let averagePair = (arr, target) => {
     }
     if (j === arr.length - 1) {
       i++;
-      j =  0;
+      j = 0;
     }
     j++;
   }
