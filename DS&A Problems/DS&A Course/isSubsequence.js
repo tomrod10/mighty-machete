@@ -27,3 +27,13 @@ function isSubsequence(str1, str2) {
   }
   return false;
 }
+
+let test1 = isSubsequence('hello', 'hello world'); // true
+let test2 = isSubsequence('sing', 'sting'); // true
+let test3 = isSubsequence('abc', 'abracadabra'); // true
+let test4 = isSubsequence('abc', 'acb'); // false (order matters)
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
