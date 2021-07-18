@@ -11,7 +11,6 @@ Example 2:
 Input: nums = [1,1]
 Output: [2]
 */
-console.time('a');
 var findDisappearedNumbers = function(nums) {
   let missing = [];
   let n = nums.length;
@@ -27,7 +26,6 @@ var findDisappearedNumbers = function(nums) {
 
 let test1 = findDisappearedNumbers([4,3,2,7,8,2,3,1]);
 let test2 = findDisappearedNumbers([1,1]);
-console.timeEnd('a');
 
 console.log(test1);
 console.log(test2);
