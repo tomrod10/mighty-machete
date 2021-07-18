@@ -1,4 +1,4 @@
-/* [Valid Mountain Array] from LeetCode's explore - Array module
+/* [Find Disappeared Numbers] from LeetCode's explore - Array module
 
 Prompt:
 Given an array nums of n integers where nums[i] is in the range [1, n], return an array of all the integers in the range [1, n] that do not appear in nums.
