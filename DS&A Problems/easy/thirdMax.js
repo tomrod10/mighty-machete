@@ -20,6 +20,19 @@ Explanation: Note that the third maximum here means the third maximum distinct n
 Both numbers with value 2 are both considered as second maximum.
 */
 
-var thirdMax = function(nums) {
-
+// Solution
+var thirdMax = function (nums) {
+	if (nums.length === 1) return nums[0];
+	nums.sort((a, b) => b - a);
+	nums = Array.from(new Set(nums));
+	if (nums.length < 3) return nums[0];
+	return nums[2];
 };
+
+let test1 = thirdMax([3,2,1]); // 1
+let test2 = thirdMax([1,2]); // 2
+let test3 = thirdMax([2,2,3,1]); // 1
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
