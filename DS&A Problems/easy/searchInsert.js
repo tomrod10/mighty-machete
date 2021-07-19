@@ -26,6 +26,32 @@ Input: nums = [1], target = 0
 Output: 0
 */
 
+// Solution
 var searchInsert = function(nums, target) {
+  let i = 0;
+  let j = nums.length - 1;
 
+  while(i <= j) {
+    let mid = Math.floor((j + i) / 2);
+    if (nums[mid] === target) {
+      return mid;
+    } else if (nums[mid] > target) {
+      j = mid - 1;
+    } else {
+      i = mid + 1;
+    }
+  }
+  return i;
 };
+
+let test1 = searchInsert([1,3,5,6], 5); // 2
+let test2 = searchInsert([1,3,5,6], 7); // 4
+let test3 = searchInsert([1,3,5,6], 2); // 1
+let test4 = searchInsert([1], 0); // 0
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
+console.log(test4);
+
+
