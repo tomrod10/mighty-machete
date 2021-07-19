@@ -36,3 +36,7 @@ var plusOne = function(digits) {
   result[0] = 1;
   return result;
 };
+
+let test1 = plusOne([1,2,3]); // [1,2,4]
+let test2 = plusOne([0]); // [1]
+let test3 = plusOne([99]); // [1,0,0]
