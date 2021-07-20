@@ -20,6 +20,7 @@ Input: nums = [1]
 Output: 1
 */
 
+// Solution | Time O(n) | Space O(1)
 var singleNumber = function(nums) {
   if (nums.length === 1) return nums[0];
 
