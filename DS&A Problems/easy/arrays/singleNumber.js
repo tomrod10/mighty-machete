@@ -21,5 +21,31 @@ Output: 1
 */
 
 var singleNumber = function(nums) {
+  if (nums.length === 1) return nums[0];
 
+  nums.sort((a,b) => (a-b));
+  let i = 0;
+  for (let j = 1; j < nums.length; j++) {
+    if (i === 0) {
+      if (nums[i] !== nums[j]) {
+        return nums[i];
+      } else {
+        i++;
+      }
+    }
+    if (nums[i] !== nums[j]) {
+      if (nums[j] !== nums[j+1]) {
+        return nums[j];
+      }
+      i = j;
+    }
+  }
 };
+
+let test1 = singleNumber([2,2,1]);
+let test2 = singleNumber([4,1,2,1,2]);
+let test3 = singleNumber([1]);
+
+console.log(test1);
+console.log(test2);
+console.log(test3);
