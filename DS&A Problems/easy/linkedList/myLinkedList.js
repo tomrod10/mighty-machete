@@ -35,11 +35,19 @@ myLinkedList.get(1);              // return 3
 /**
  * Initialize your data structure here.
  */
- var MyLinkedList = function() {
+var MyLinkedList = function() {
   let list = {};
   list.head = null;
   list.tail = null;
+  return list;
 };
+
+var Node = function(val) {
+  let node = {};
+  node.val = val;
+  node.next = null;
+  return node;
+}
 
 /**
  * Get the value of the index-th node in the linked list. If the index is invalid, return -1.
@@ -47,7 +55,10 @@ myLinkedList.get(1);              // return 3
  * @return {number}
  */
 MyLinkedList.prototype.get = function(index) {
-
+  for (node in this) {
+    if (node === index) return node.value;
+  }
+  return -1;
 };
 
 /**
@@ -56,7 +67,14 @@ MyLinkedList.prototype.get = function(index) {
  * @return {void}
  */
 MyLinkedList.prototype.addAtHead = function(val) {
-
+    if (!this.head) {
+      list.head = new Node(val);
+    } else {
+      let node = new Node(val);
+      node.next = this.head;
+      this.head = node;
+    }
+    return this;
 };
 
 /**
