@@ -22,3 +22,17 @@ Input: head = [1], pos = -1
 Output: false
 Explanation: There is no cycle in the linked list.
 */
+
+var hasCycle = function(head) {
+  if (!head) return false;
+
+  let slow = head;
+  let fast = head.next;
+
+  while(head) {
+      if (!fast || !fast.next) return false;
+      if (fast === slow || fast.next === slow) return true;
+      slow = slow.next;
+      fast = fast.next.next;
+  }
+};
