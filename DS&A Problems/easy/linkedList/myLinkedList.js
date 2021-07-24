@@ -55,13 +55,11 @@ var Node = function(val) {
 MyLinkedList.prototype.get = function(index) {
   let count = 0;
   let node = this.head;
-  console.log(this);
   while(node) {
     if (count === index) return node.val;
     node = node.next;
     count++;
   }
-  console.log(this);
   return -1;
 };
 
