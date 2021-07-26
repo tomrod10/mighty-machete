@@ -28,6 +28,72 @@ Explanation: From the head of A, it reads as [2,6,4]. From the head of B, it rea
 Explanation: The two lists do not intersect, so return null.
 */
 
+// Solution | Time O(1) | Space O(n)
 var getIntersectionNode = function(headA, headB) {
+  let lenA = 0;
+  let lenB = 0;
+  let nodeA = headA;
+  let nodeB = headB;
 
+  while(nodeA) {
+    lenA++;
+    nodeA = nodeA.next;
+  }
+
+  while(nodeB) {
+    lenB++;
+    nodeB = nodeB.next;
+  }
+
+  nodeA = headA;
+  while(lenA > lenB) {
+    nodeA = nodeA.next;
+    lenA--;
+  }
+  nodeB = headB;
+  while(lenA < lenB) {
+    nodeB = nodeB.next;
+    lenB--;
+  }
+
+  while(nodeA !== nodeB) {
+    nodeA = nodeA.next;
+    nodeB = nodeB.next;
+  }
+  return nodeA;
+};
+
+// Alternate Solution | Time O(n) | Space O(1) - wintryleo
+var getIntersectionNode = function(headA, headB) {
+  let currA = headA,
+      currB = headB;
+
+  // start both pointer from the start of the linked lists
+  // when the smaller list pointer reaches end, we start it from the beginning of the longer list
+  // and when the longer list reaches end, we start it from the beginning of the smaller list
+  // so basically both the pointers traverse at-max (m + n) steps until they either meet at the intersection
+  // or at the end (null)
+  while(currA !== currB) {
+      if(!currA) {
+          currA = headB;
+      } else {
+          currA = currA.next;
+      }
+      if(!currB) {
+          currB = headA;
+      } else {
+          currB = currB.next;
+      }
+  }
+  return currA;
+}
+
+// Same but different syntax - COrtez1
+const getIntersectionNode = (headA, headB) => {
+  let a = headA, b = headB;
+  while (a !== b) {
+    a = a ? a.next : headB;
+    b = b ? b.next : headA;
+  }
+  return a;
 };
