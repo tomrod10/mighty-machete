@@ -23,3 +23,24 @@ Output: no cycle
 Explanation: There is no cycle in the linked list.
  */
 
+// Solution | Time O(n) | Space O(1)
+var detectCycle = function(head) {
+  let slow = head;
+  let fast = head;
+
+  while(fast && fast.next) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (fast === slow) break;
+  }
+
+  if (fast === null || fast.next === null) return null;
+
+  slow = head;
+  while(slow !== fast) {
+      if (fast === slow) break;
+      slow = slow.next;
+      fast = fast.next;
+  }
+  return slow;
+};
