@@ -29,7 +29,7 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 Follow up: Can you come up with an algorithm that runs in O(m + n) time?
 */
 
-// O(n) Time Complexity
+// O(nlogn) Time Complexity
 var merge = function(nums1, m, nums2, n) {
   for (let i = m; i < nums1.length; i++) {
     nums1[i] = nums2.pop();
