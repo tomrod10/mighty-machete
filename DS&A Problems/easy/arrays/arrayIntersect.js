@@ -24,7 +24,7 @@ var intersection = function(nums1, nums2) {
   return Array.from(intersections);
 };
 
-// Alternate solution - Time O(n) | Space O(n) | Ran tests in 68 ms faster than 96.61% (faster)
+// Alternate solution 1 - Time O(n) | Space O(n) | Ran tests in 68 ms faster than 96.61% (faster)
 var intersection = function(nums1, nums2) {
   let set1 = new Set(nums1);
   let set2 = new Set(nums2);
@@ -35,4 +35,22 @@ var intersection = function(nums1, nums2) {
   }
   return intersections;
 };
+
+// Alternate solution 2 - Time O(n) | Space O(1) by COrtez1
+// [[ Assuming the inputs are sorted! ]]
+const intersection = (A, B) => {
+  const res = [];
+  let pA = 0;
+  let pB = 0;
+  while (pA < A.length && pB < B.length) {
+    if (A[pA] === B[pB]) {
+      if (pA == 0 || A[pA] != A[pA - 1]) res.push(A[pA]);
+      pA++;
+      pB++;
+    } else if (A[pA] < B[pB]) pA++;
+    else pB++;
+  }
+  return res;
+};
+
 
