@@ -13,7 +13,7 @@ Output: [9,4]
 Explanation: [4,9] is also accepted.
 */
 
-// Solution - Time O(n) | Space O(n)
+// Solution - Time O(n) | Space O(n) | Ran tests in 132 ms faster than 5% (AKA super slow)
 var intersection = function(nums1, nums2) {
   let set1 = new Set(nums1);
   let intersections = new Set();
@@ -23,3 +23,16 @@ var intersection = function(nums1, nums2) {
   }
   return Array.from(intersections);
 };
+
+// Alternate solution - Time O(n) | Space O(n) | Ran tests in 68 ms faster than 96.61% (faster)
+var intersection = function(nums1, nums2) {
+  let set1 = new Set(nums1);
+  let set2 = new Set(nums2);
+  let intersections = [];
+
+  for (let val of set1) {
+    if (set2.has(val)) intersections.push(val);
+  }
+  return intersections;
+};
+
