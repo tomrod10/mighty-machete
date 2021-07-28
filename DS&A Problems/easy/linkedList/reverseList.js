@@ -30,3 +30,13 @@ var reverseList = function(head) {
   }
   return prev;
 };
+
+// Recursive Solution - Time O(n) | Space O(n)
+var reverseList = function(head) {
+  if (head === null || head.next === null) return head;
+
+  let reversedListHead = reverseList(head.next);
+  head.next.next = head;
+  head.next = null;
+  return reversedListHead;
+};
