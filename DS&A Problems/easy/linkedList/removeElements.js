@@ -16,6 +16,7 @@ Input: head = [7,7,7,7], val = 7
 Output: []
 */
 
+// Solution - Time O(n) | Space O(1)
 var removeElements = function(head, val) {
   if (head === null) {
     return head;
@@ -36,6 +37,27 @@ var removeElements = function(head, val) {
         prev = curr;
       }
       curr = curr.next;
+    }
+  }
+  return head;
+};
+
+// Similar solution w/ slightly different syntax
+var removeElements = function(head, val) {
+  if (head === null) {
+    return head;
+  }
+
+  while(head !== null && head.val === val) {
+    head = head.next;
+  }
+
+  let curr = head;
+  while(curr !== null && !curr.next !== null) {
+    if (curr.next.val === val) {
+      curr.next = curr.next.next;
+    } else {
+      curr = curr.next
     }
   }
   return head;
