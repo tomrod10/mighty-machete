@@ -17,5 +17,26 @@ Output: []
 */
 
 var removeElements = function(head, val) {
+  if (head === null) {
+    return head;
+  }
 
+  while(head !== null && head.val === val) {
+    head = head.next;
+  }
+
+  if (head !== null) {
+    let prev = head;
+    let curr = head.next;
+
+    while(curr !== null) {
+      if (curr.val === val) {
+        prev.next = curr.next;
+      } else {
+        prev = curr;
+      }
+      curr = curr.next;
+    }
+  }
+  return head;
 };
