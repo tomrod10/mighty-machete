@@ -14,6 +14,27 @@ Output: false
 Follow up: Could you do it in O(n) time and O(1) space?
  */
 
+// Solution - Time O(n) | Space O(n)
+var isPalindrome = function(head) {
+  let reverse = [];
+  let listHead = head;
+
+  while(head !== null) {
+    reverse.push(head.val);
+    head = head.next;
+  }
+  reverse.reverse();
+
+  let idx = 0;
+  while(listHead !== null) {
+    if (reverse[idx] !== listHead.val) return false;
+    listHead = listHead.next;
+    idx++;
+  }
+  return true;
+};
+
+// Alternate Solution - Time O(n) | Space O(1)
 var isPalindrome = function(head) {
 
 };
