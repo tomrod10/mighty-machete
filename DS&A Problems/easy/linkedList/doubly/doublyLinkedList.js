@@ -42,6 +42,7 @@ var Node = function(val) {
   let node = {};
   this.val = val;
   this.next = null;
+  this.prev = null;
 }
 
 /**
@@ -73,6 +74,8 @@ MyLinkedList.prototype.addAtHead = function(val) {
       this.head = newNode;
     } else {
       newNode.next = this.head;
+      newNode.prev = null;
+      this.head.prev = newNode;
       this.head = newNode;
     }
   return;
@@ -93,6 +96,7 @@ MyLinkedList.prototype.addAtHead = function(val) {
       while(node) {
         if (node.next === null) {
           node.next = newNode;
+          newNode.prev = node;
           this.tail = newNode;
           break;
         }
@@ -122,7 +126,7 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
   }
 
   if (index > listSize) {
-    return
+    return;
   }
 
   let count = 0;
