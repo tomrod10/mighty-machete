@@ -34,7 +34,7 @@ var isPalindrome = function(head) {
   return true;
 };
 
-// Alternate Solution - Time O(n) | Space O(1)
+// Alternate Solution - Time O(n) | Space O(1) by shivanigupta19
 var isPalindrome = function(head) {
   let slow = head;
   let fast = head;
