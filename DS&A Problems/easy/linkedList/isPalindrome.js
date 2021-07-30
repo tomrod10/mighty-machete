@@ -36,5 +36,27 @@ var isPalindrome = function(head) {
 
 // Alternate Solution - Time O(n) | Space O(1)
 var isPalindrome = function(head) {
+  let slow = head;
+  let fast = head;
+  let prev = null;
 
+  // Revesing left half of the list
+  while(fast !== null && fast.next !== null) {
+    fast = fast.next.next;
+    let temp = slow;
+    slow = slow.next;
+    temp.next = prev;
+    prev = temp;
+  }
+
+  // Handling for odd length of list
+  if (fast !== null) slow = slow.next;
+
+  // Comparing both halves
+  while(prev !== null && slow !== null) {
+    if (prev.val !== slow.val) return false;
+    prev = prev.next;
+    slow = slow.next;
+  }
+  return prev === null && slow === null;
 };
