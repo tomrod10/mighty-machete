@@ -135,6 +135,8 @@ MyLinkedList.prototype.addAtIndex = function(index, val) {
   while(node) {
     if (count === index - 1) {
       newNode.next = node.next;
+      newNode.prev = node;
+      node.next.prev = newNode;
       node.next = newNode;
       break;
     }
