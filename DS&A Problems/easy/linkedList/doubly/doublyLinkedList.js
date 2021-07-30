@@ -170,6 +170,8 @@ MyLinkedList.prototype.deleteAtIndex = function(index) {
       node.next = node.next.next ? node.next.next : null;
         if (!node.next) {
           this.tail = node;
+        } else {
+          node.next.prev = node;
         }
       break;
     }
