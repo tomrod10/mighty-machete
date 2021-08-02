@@ -28,3 +28,11 @@ Write an efficient algorithm for the following assumptions:
 var numsDivisibleByThree = function(S) {
 
 }
+
+let test1 = numsDivisibleByThree("23");
+let test2 = numsDivisibleByThree("0081");
+let test3 = numsDivisibleByThree("022");
+
+console.log(test1, test1 === 7);
+console.log(test2, test2 === 11);
+console.log(test3, test3 === 9);
