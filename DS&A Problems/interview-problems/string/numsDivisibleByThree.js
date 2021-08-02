@@ -26,7 +26,32 @@ Write an efficient algorithm for the following assumptions:
 */
 
 var numsDivisibleByThree = function(S) {
+  let ans = 0;
+  let vals = [];
+  let index = 0;
+  let digit = 0;
 
+  while(index < S.length) {
+    // 0-9 each decimal place
+
+    // set the current decimal place
+    // string number to "0"
+    // then turn it into a number
+
+    // check if the current number is divisible 3
+    // if so
+      // increment ans counter
+
+    // if the current num at decimal place is 9
+      // reset the number to its input
+      // move to the next decimal place
+      // increment index
+      // reset digit to 0
+      // continue
+
+    // incerement the num of the current decimal place
+    // ex: current = S[index] = '' + (digit+=1)
+  }
 }
 
 let test1 = numsDivisibleByThree("23");
