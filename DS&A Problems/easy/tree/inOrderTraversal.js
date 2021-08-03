@@ -36,3 +36,21 @@ var inorderTraversal = function(root) {
   traversal(root)
   return inOrder;
 };
+
+// Iterative Solution - Time O(n) | Space O(n)
+var inorderTraversal = function(root) {
+  let node = root;
+  let stack = [];
+  let inOrder = [];
+
+  while(node !== null || stack.length !== 0) {
+      while(node !== null) {
+          stack.push(node);
+          node = node.left;
+      }
+      node = stack.pop();
+      inOrder.push(node.val);
+      node = node.right;
+  }
+  return inOrder;
+};
