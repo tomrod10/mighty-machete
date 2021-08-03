@@ -34,7 +34,7 @@ var numsDivisibleByThree = function(S) {
   while(index < S.length) {
     // 0-9 each decimal place
 
-    // set the current decimal place
+    // set the current decimal place num
     // string number to "0"
     // then turn it into a number
 
@@ -45,7 +45,7 @@ var numsDivisibleByThree = function(S) {
     // if the current num at decimal place is 9
       // reset the number to its input
       // move to the next decimal place
-      // increment index
+        // increment index
       // reset digit to 0
       // continue
 
