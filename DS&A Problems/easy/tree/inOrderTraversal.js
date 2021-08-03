@@ -24,3 +24,15 @@ Input: root = [1,null,2]
 Output: [1,2]
 */
 
+// Recursive Solution - Time O(n) | Space O(n)
+var inorderTraversal = function(root) {
+
+  let inOrder = [];
+  let traversal = function(node) {
+      if (node.left) traversal(node.left);
+      inOrder.push(node.val);
+      if (node.right) traversal(node.right);
+  }
+  traversal(root)
+  return inOrder;
+};
