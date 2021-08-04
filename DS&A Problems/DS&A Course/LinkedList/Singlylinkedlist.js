@@ -51,7 +51,7 @@ class SinglyLinkedList {
 
   // Delete the first element of the list
   shift() {
-    if (!head) return undefined;
+    if (!this.head) return undefined;
 
     let currentHead = this.head;
     this.head = currentHead.next;
@@ -60,5 +60,24 @@ class SinglyLinkedList {
       this.tail = null;
     }
     return currentHead;
+  }
+
+  // Add to the beginning (head) of the list
+  unshift(val) {
+    let newNode = new Node(val);
+    if (!this.head) {
+      this.head = newNode;
+      this.tail =  newNode;
+    } else {
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+    return this;
+  }
+
+  // Retrieve or get a node from the list
+  get(something) {
+
   }
 }
