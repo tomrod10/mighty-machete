@@ -78,16 +78,14 @@ class SinglyLinkedList {
 
   // Retrieve or get a node from the list
   get(index) {
+    if (index >= this.length || index < 0) return null;
+
     let currIndex = 0
     let node = this.head;
-
-    if (index > this.length || index < 0) return null;
-
-    while(node) {
-      if (currIndex === index) return node;
-      currIndex++;
+    while(currIndex !== index) {
       node = node.next;
+      currIndex++;
     }
-    return null;
+    return node;
   }
 }
