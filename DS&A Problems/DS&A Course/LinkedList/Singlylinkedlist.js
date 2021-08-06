@@ -119,4 +119,9 @@ class SinglyLinkedList {
     this.length++;
     return true;
   }
+
+  // Remove node at a specific position
+  remove(index) {
+
+  }
 }
