@@ -89,6 +89,7 @@ class SinglyLinkedList {
     return node;
   }
 
+  // Update a node's value
   set(val, index) {
     if (index >= this.length || index < 0) return null;
 
