@@ -103,6 +103,20 @@ class SinglyLinkedList {
 
   // Add node at a specific position
   insert(val, index) {
+    if (index < 0 || index > this.length) return false;
+    if (index === this.length) return !!this.push(val);
+    if (index === 0) return !!this.unshift(val);
 
+    let currIndex = 0;
+    let  node = this.head;
+    let newNode = new Node(val);
+    while(currIndex !== index - 1) {
+      node = node.next;
+      currIndex++;
+    }
+    newNode.next = node.next;
+    node.next = newNode;
+    this.length++;
+    return true;
   }
 }
