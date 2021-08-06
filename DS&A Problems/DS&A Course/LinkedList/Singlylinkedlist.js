@@ -100,4 +100,9 @@ class SinglyLinkedList {
     }
     return false
   }
+
+  // Add node at a specific position
+  insert(val, index) {
+
+  }
 }
