@@ -122,18 +122,12 @@ class SinglyLinkedList {
 
   // Remove node at a specific position
   remove(index) {
-    if (index < 0 || index > this.length) return false;
-    if (index === this.length) {
-      // go to the penultimate node and set its next to null;
-      // return true
-    } else if (index === 0) {
-      // store the newHead in variable
-      // set the current head's .next to null
-      // set this.head to newHead
-      // return true
-    }
-    // go to the node previous to the index
-    // set node.next to node.next.next
-    // return true
+    if (index < 0 || index >= this.length) return false;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+    let prev = this.get(index - 1);
+    let removed = prev.next;
+    prev.next = removed.next;
+    return removed;
   }
 }
