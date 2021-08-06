@@ -130,4 +130,8 @@ class SinglyLinkedList {
     prev.next = removed.next;
     return removed;
   }
+
+  reverse() {
+
+  }
 }
