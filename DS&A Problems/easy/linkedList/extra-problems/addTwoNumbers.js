@@ -19,6 +19,43 @@ Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 */
 
-var addTwoNumbers = function(l1, l2) {
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
+ */
 
+
+ var addTwoNumbers = function(l1, l2) {
+   let dummy = new ListNode(-1, null);
+   let head = dummy;
+   let p = l1;
+   let q = l2;
+   let carry = 0;
+
+   while(p !== null || q !== null) {
+     let x = (p !== null) ? p.val : 0;
+     let y = (q !== null) ? q.val : 0;
+     let sum = carry + x + y;
+
+     carry = Math.floor(sum / 10);
+     dummy.next = new ListNode(sum % 10);
+     dummy = dummy.next;
+
+     if (p !== null) p = p.next;
+     if (q !== null) q = q.next;
+   }
+
+   if (carry > 0) {
+     dummy.next = new ListNode(carry);
+   }
+  return head.next;
 };
+
