@@ -29,6 +29,8 @@ Output: [0]
  * @param {ListNode} l2
  * @return {ListNode}
  */
+
+// Iterative Solution
  var mergeTwoLists = function(l1, l2) {
   let dummy = new ListNode(-1, null);
   let head = dummy;
@@ -47,4 +49,23 @@ Output: [0]
   if (l1) dummy.next = l1;
   else dummy.next = l2;
   return head.next;
+};
+
+// Recursive Solution
+var mergeTwoLists = function(l1, l2) {
+  if (!l1 && !l2) {
+    return null;
+  } else if (!l1 && l2) {
+    return l2;
+  } else if (l1 && !l2) {
+    return l1;
+  } else if (l1.val < l2.val) {
+    let curr = l1;
+    curr.next = mergeTwoLists(l1.next, l2);
+    return curr;
+  } else {
+    let curr = l2;
+    curr.next = mergeTwoLists(l1, l2.next);
+    return curr;
+  }
 };
