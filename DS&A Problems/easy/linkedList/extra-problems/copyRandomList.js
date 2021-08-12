@@ -48,6 +48,26 @@ Explanation: The given linked list is empty (null pointer), so return null.
  * @param {Node} head
  * @return {Node}
  */
- var copyRandomList = function(head) {
+// Iterative Solution - Time O(n) | Space O(n)
+var copyRandomList = function(head) {
+  if (!head) return null;
 
+  let curHead = head;
+  let hashMap = new Map();
+
+  while(curHead) {
+    hashMap.set(curHead, new Node(curHead.val))
+    curHead = curHead.next;
+  }
+
+  curHead = head;
+  let cloneNode = hashMap.get(curHead);
+  let cloneHead = cloneNode;
+  while(curHead) {
+    if (curHead.random) cloneNode.random = hashMap.get(curHead.random);
+    if (curHead.next) cloneNode.next = hashMap.get(curHead.next);
+    curHead = curHead.next;
+    cloneNode = cloneNode.next;
+  }
+  return cloneHead;
 };
