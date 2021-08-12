@@ -70,5 +70,29 @@ Merging the serialization of each level and removing trailing nulls we obtain:
  * @return {Node}
  */
  var flatten = function(head) {
+  dfs(head);
+  return head;
 
+  function dfs(node) {
+    let pre = null;
+    while(node) {
+      pre = node;
+      if (node.child) {
+        let tail = dfs(node.child);
+        tail.next = node.next;
+        if (node.next) {
+          node.next.prev = tail;
+        }
+        node.next = node.child;
+        node.child.prev = node;
+        node.child = null;
+
+        node = tail.next;
+        pre = tail;
+      } else {
+        node = node.next;
+      }
+    }
+    return pre;
+  }
 };
