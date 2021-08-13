@@ -20,5 +20,12 @@ Explanation: In this case, no transactions are done and the max profit = 0.
 */
 
 const maxProfit = (prices) => {
-
+  let profit = 0;
+  let minPrice = Number.MAX_VALUE;
+  for (let i = 0; i < prices.length; i++) {
+    let price = prices[i];
+    minPrice = Math.min(minPrice, price);
+    profit = Math.max(profit, (price - minPrice))
+  }
+  return profit;
 }
