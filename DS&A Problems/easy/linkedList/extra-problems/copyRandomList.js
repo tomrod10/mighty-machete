@@ -71,3 +71,33 @@ var copyRandomList = function(head) {
   }
   return cloneHead;
 };
+
+// Constant Space Solution - Time O(n) | Space O(1)
+var copyRandomList = function(head) {
+  if (!head) return null;
+
+  let curNode = head, newNode, cloneHead;
+
+  while(curNode) {
+    newNode = new Node(curNode.val, curNode.next);
+    if (!cloneHead) cloneHead = newNode;
+    curNode.next = newNode;
+    curNode = newNode.next
+  }
+
+  curNode = head;
+  while(curNode) {
+    curNode.next.random = curNode.random ? curNode.random.next : null;
+    curNode = curNode.next.next;
+  }
+
+  curNode = head;
+  let cloneList = cloneHead;
+  while(curNode) {
+    curNode.next = curNode.next.next
+    cloneList.next = cloneList.next && cloneList.next.next ? cloneList.next.next : null;
+    curNode = curNode.next;
+    cloneList = cloneList.next;
+  }
+  return cloneHead;
+};
