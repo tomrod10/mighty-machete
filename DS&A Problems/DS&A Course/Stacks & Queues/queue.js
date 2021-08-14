@@ -2,7 +2,7 @@
 
 // You could use an array but you would not be
 // able to work around re-indexing every element
-// in the array.
+// in the array when dequeueing or unshifting.
 
 class Node {
   constructor(val) {
