@@ -1,12 +1,5 @@
-// Binary Tree Breadth First Search
+// Binary Tree Depth First Search
 
-/*
-  Example binary tree
-
-         10
-      6     15
-    3  8      20
-*/
 class Node {
   constructor(val) {
     this.val = val;
@@ -107,6 +100,18 @@ class BinarySearchTree {
     return result;
   }
 }
+
+/*
+  Example binary tree
+
+         10
+      6     15
+    3  8      20
+*/
+
+// DFS Preorder - [10, 6, 3, 8, 15, 20]
+// DFS Postorder - [3, 8, 6, 20, 15, 10]
+// DFS Inorder - [3, 6, 8, 10, 15, 20]
 
 const tree = new BinarySearchTree();
 tree.insert(10);
