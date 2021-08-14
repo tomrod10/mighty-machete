@@ -39,12 +39,29 @@ class BinarySearchTree {
       }
     }
   }
+
+  find(val) {
+    if (!this.root) return false;
+    let node = this.root;
+    let found = false;
+    while(node && !found) {
+      if (val > node.val) {
+        node = node.right;
+      } else if (val < node.val) {
+        node = node.left;
+      } else {
+        found = true;
+      }
+    }
+    if (!found) return false;
+    return current;
+  }
 }
 
 /*
 Example tree
 
-        10
+       10
     5      13
   2  7   11  15
 
