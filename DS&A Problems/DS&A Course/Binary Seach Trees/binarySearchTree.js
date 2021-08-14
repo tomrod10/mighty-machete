@@ -20,26 +20,22 @@ class BinarySearchTree {
       this.root = newNode;
       return this.root;
     }
-    if (val === node.val) return undefined;
 
     let node = this.root;
     while(true) {
+      if (val === node.val) return undefined;
       if (val > node.val) {
-
         if (!node.right) {
           node.right = newNode;
           return this;
-        } else {
-          node = node.right
         }
-      } else if (val < node.val) {
+        node = node.right
+      } else {
         if (!node.left) {
           node.left = newNode;
           return this;
         }
-        else {
-          node = node.left;
-        }
+        node = node.left;
       }
     }
   }
