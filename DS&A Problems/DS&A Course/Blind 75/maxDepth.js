@@ -20,8 +20,43 @@ Output: 0
 Example 4:
 Input: root = [0]
 Output: 1
-*/
 
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+// Solution
 const maxDepth = (root) => {
+  let depth = 0;
+  let node = root;
+  backtrack(node);
+  return depth;
 
+  const backtrack(node, level=1) {
+    if (level > depth) depth = level;
+    node.left && backtrack(node.left, level+1);
+    node.right && backtrack(node.right, level+1);
+  }
+}
+
+// Similar Solution
+const maxDepth = (root) => {
+  if (!root) return 0;
+
+  let left = maxDepth(root.left);
+  let right = maxDepth(root.right);
+  return Math.max(left, right) + 1;
+}
+
+// Alternate Solution
+const maxDepth = (root) => {
+  if (!root) return 0;
+  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 }
