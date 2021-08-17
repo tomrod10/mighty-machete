@@ -13,3 +13,18 @@ Input: root = [4,2,7,1,3], val = 5
 Output: []
 */
 
+// Solution
+var searchBST = function(root, val) {
+  let found;
+  function traverse(root) {
+      if (root.val === val) {
+        found = root;
+        return;
+      }
+      if (root.left) traverse(root.left);
+      if (root.right) traverse(root.right);
+  }
+  traverse(root);
+  if (found) return found
+  return null;
+};
