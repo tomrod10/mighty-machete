@@ -15,3 +15,14 @@ Input: head = [1]
 Output: [1]
 */
 
+// Solution
+var swapPairs = function(head) {
+  if (head === null || head.next === null) return head;
+
+  let nextNode = head.next.next;
+  let temp = head;
+  head = head.next;
+  head.next = temp;
+  head.next.next = swapPairs(nextNode);
+  return head;
+};
