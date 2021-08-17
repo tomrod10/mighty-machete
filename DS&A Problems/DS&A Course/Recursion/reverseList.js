@@ -15,3 +15,12 @@ Input: head = []
 Output: []
 */
 
+// Solution
+var reverseList = function(head) {
+  if (head === null || head.next === null) return head;
+
+  let reversedListHead = reverseList(head.next);
+  head.next.next = head;
+  head.next = null;
+  return reversedListHead;
+};
