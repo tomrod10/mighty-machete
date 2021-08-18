@@ -20,6 +20,24 @@ Explanation: There are three ways to climb to the top.
 3. 2 steps + 1 step
 */
 
+// Solution
 var climbStairs = function(n) {
+  class ClimbStairs {
+    constructor() {
+      this.memo = {};
+    }
 
+    waysToClimb(n) {
+      if (this.memo[n]) return this.memo[n];
+      let count = 0;
+      if (n < 0) return 0;
+      if (n === 0) return ++count;
+      count += this.waysToClimb(n-1);
+      count += this.waysToClimb(n-2);
+      this.memo[n] = count;
+      return count;
+    }
+  }
+  let climb = new ClimbStairs();
+  return climb.waysToClimb(n);
 };
