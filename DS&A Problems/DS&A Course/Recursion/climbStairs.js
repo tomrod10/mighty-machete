@@ -41,3 +41,14 @@ var climbStairs = function(n) {
   let climb = new ClimbStairs();
   return climb.waysToClimb(n);
 };
+
+// DP Solution
+var climbStairs = function(n) {
+  let waysToClimb = [];
+  waysToClimb[0] = 1;
+  waysToClimb[1] = 1;
+  for (let i = 2; i <= n; i++) {
+    waysToClimb[i] = waysToClimb[i-1] + waysToClimb[i-2];
+  }
+  return waysToClimb[n]
+};
