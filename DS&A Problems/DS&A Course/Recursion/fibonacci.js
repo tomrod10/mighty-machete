@@ -22,3 +22,21 @@ Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 */
 
+var fib = function(n) {
+  class Fib {
+    constructor() {
+      this.memo = {};
+    }
+
+    nthFib(n) {
+      let result;
+      if (this.memo[n]) return this.memo[n];
+      if (n === 0 || n === 1) return n;
+      result = this.nthFib(n-1) + this.nthFib(n-2);
+      this.memo[n] = result;
+      return result;
+    }
+  }
+  let findFib = new Fib();
+  return findFib.nthFib(n);
+};
