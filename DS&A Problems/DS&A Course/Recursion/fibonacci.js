@@ -22,6 +22,7 @@ Output: 3
 Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 */
 
+// Solution
 var fib = function(n) {
   class Fib {
     constructor() {
@@ -39,4 +40,38 @@ var fib = function(n) {
   }
   let findFib = new Fib();
   return findFib.nthFib(n);
+};
+
+/*
+[Tail Recursion Solution]
+
+Note: This works at its best if your coding
+language supports Tail Call Optimization (TCO)
+
+Each recursive call of 'go'
+we check if n hits any of the two conditionals
+if not, we call go, decrement n by 1, pass b as a,
+and we generate the next fibonacci number by adding
+a to b. We are basically doing a sliding window
+method on each call. Finally, one of the base
+cases ends the recursion and returns the nth
+fibonacci number.
+
+The reason why this is efficient is due
+to the go function being Tail Recursive.
+This means that the last thing the function
+does is make a recursive call and not any
+further calculations. It's for this reason
+that there's nothing to remember or store
+in memory in each stack for later calculations
+when stack collapses.
+*/
+const go = (n, a, b) => {
+  if (n === 0) return a;
+  if (n === 1) return b;
+  go(n-1, b, a+b)
+}
+
+const fib = (n) => {
+  return go(n, 0, 1);
 };
