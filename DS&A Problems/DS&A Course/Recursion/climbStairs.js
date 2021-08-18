@@ -52,3 +52,14 @@ var climbStairs = function(n) {
   }
   return waysToClimb[n]
 };
+
+// Tail Recursion Solution
+const go = (i, n, arr) => {
+  if (i > n) return arr[n];
+  arr[i] = arr[i-1] + arr[i-2]
+  return go(i+1, n, arr)
+}
+
+const climbStairs = (n) => {
+  return go(2, n, [1, 1]);
+};
