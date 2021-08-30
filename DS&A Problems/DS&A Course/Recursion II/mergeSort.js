@@ -11,6 +11,7 @@ Input: nums = [5,1,1,2,0,0]
 Output: [0,0,1,1,2,5]
 */
 
+// Solution
 const merge = (left, right) => {
   let lPointer = 0;
   let rPointer = 0;
